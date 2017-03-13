@@ -1,0 +1,14 @@
+<button md-fab color="primary">ATA</button>
+<button md-fab="accent">MCU</button>
+<button md-fab color="warn">BDM</button>
+
+<md-tab-group>
+  <md-tab label="Open Discrepancies">
+    <table><tr>
+      <td style="width:70%;vertical-align: top"><app-discrepancies (onRowItemSelected) ="onRowItemSelected($event)" ></app-discrepancies></td>
+      <td style="width:30%;vertical-align: top"><app-details [selectedItem] = "selectedItem"></app-details></td>
+    </tr></table>
+  </md-tab>
+  <md-tab label="MCU Reports">To be implemented..</md-tab>
+</md-tab-group>
+

@@ -1,0 +1,112 @@
+<md-radio-group>
+  <md-radio-button value="1">All</md-radio-button>
+  <md-radio-button value="2">Scheduled</md-radio-button>
+  <md-radio-button value="3">TWD</md-radio-button>
+</md-radio-group>
+<md-input-container>
+  <input mdInput type="date" placeholder="" value="">
+</md-input-container>
+<md-input-container>
+  <input mdInput type="date" placeholder="" value="">
+</md-input-container>
+<md-checkbox *ngFor="let fleet of fleets">{{fleet}}</md-checkbox>
+<button md-raised-button color="primary">Clear</button>
+<div>
+  <md-input-container>
+    <input mdInput placeholder="Filter" value="">
+  </md-input-container>
+  <button md-raised-button color="primary">Changes</button>
+  <button md-raised-button color="primary" disabled>Comment</button>
+  <button md-raised-button color="primary" disabled>Clear Selection</button>
+  <button md-raised-button color="primary" disabled>Export</button>
+
+  <md-select placeholder="Aircraft">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+  <md-select placeholder="Station">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+  <md-select placeholder="Status">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+  <md-select placeholder="Assigned">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+  <button md-raised-button color="primary">Find</button>
+</div>
+<p-dataTable [rowStyleClass]="lookupRowStyleClass" [value]="data" selectionMode="single" [(selection)]="selectedRow" (onRowSelect)="onRowSelect($event)">
+  <p-column field="assignedTo" header="Assigned">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="loc" header="Loc">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="acNumber" header="Acft">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="fleet" header="Fleet">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="scheduledDate" header="Sched">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="twDate" header="TWD">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="mtx" header="Mtx">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="cpn" header="Part">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="partDesc" header="Description">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="qty" header="Qty">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+   <p-column field="maps" header="MAPS">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="mcuStatus" header="Status">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+  <p-column field="comments" header="Last Comment">
+    <template let-col let-item="rowData" let-ri="rowIndex" pTemplate="body">
+      <span  >{{item[col.field]}}</span>
+    </template>
+  </p-column>
+
+</p-dataTable>

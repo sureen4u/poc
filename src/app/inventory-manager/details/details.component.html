@@ -1,0 +1,70 @@
+<div>
+<table style="width:100%">
+    <tr>
+      <td>Station</td>
+      <td>Scheduled</td>
+      <td>Assigned</td>
+    </tr>
+    <tr>
+      <td>{{selectedItem.loc}}</td>
+      <td>{{selectedItem.scheduledDate}}</td>
+      <td>{{selectedItem.assignedTo}}</td>
+    </tr>
+  </table>
+<table style="width:100%">
+    <tr>
+      <td>Fleet</td>
+      <td>A/C</td>
+      <td>MTX ID</td>
+      <td>TWD</td>
+    </tr>
+    <tr>
+      <td>{{selectedItem.fleet}}</td>
+      <td>{{selectedItem.acNumber}}</td>
+      <td>{{selectedItem.mtx}}</td>
+      <td>{{selectedItem.twDate}}</td>
+    </tr>
+  </table>
+<table style="width:100%">
+  <tr>
+    <td>Part</td>
+  </tr>
+  <tr>
+    <td>{{selectedItem.cpn}}</td>
+  </tr>
+</table>
+<table style="width:100%">
+  <tr>
+    <td>Description</td>
+    <td>Qty</td>
+    <td>UOM</td>
+    <td>Haz Mat</td>
+  </tr>
+  <tr>
+    <td>{{selectedItem.partDesc}}</td>
+    <td>{{selectedItem.qty}}</td>
+    <td>{{selectedItem.uom}}</td>
+    <td>{{selectedItem.haz}}</td>
+  </tr>
+</table>
+</div>
+<div style="width:100%">
+<md-tab-group>
+  <md-tab label="Stock" style="min-width:60px">To be implemented..</md-tab>
+  <md-tab label="Part Line Text">To be implemented..</md-tab>
+  <md-tab label="MEL Text">To be implemented..</md-tab>
+  <md-tab label="FMR Text">To be implemented..</md-tab>
+</md-tab-group>
+</div>
+<div>
+<md-select placeholder="Status">
+  <md-option *ngFor="let food of foods" [value]="food.value">
+    {{ food.viewValue }}
+  </md-option>
+</md-select>
+</div>
+<md-input-container>
+<textarea mdInput rows="3" cols="50" placeholder="Status Update"></textarea></md-input-container>
+ <table width="100%"><tr><td align="right"><button md-raised-button disabled>Save</button></td></tr></table>
+  <md-input-container>
+    <textarea mdInput rows="3" cols="50"></textarea></md-input-container>
